@@ -28,7 +28,7 @@ export const MainView = () => {
           title: "Blade Runner 2049",
           image:
             "https://m.media-amazon.com/images/I/91XUYVDsPAL._AC_UY218_.jpg",
-          description:  "TOfficer K (Ryan Gosling), a new blade runner for the Los Angeles Police Department, unearths a long-buried secret that has the potential to plunge what's left of society into chaos.",
+          description:  "Officer K (Ryan Gosling), a new blade runner for the Los Angeles Police Department, unearths a long-buried secret that has the potential to plunge what's left of society into chaos.",
           genre: "Thriller",
           director: "Denis Villeneuve"
         },
@@ -56,7 +56,14 @@ export const MainView = () => {
       const [selectedMovie, setSelectedMovie] = useState(null);
 
       if(selectedMovie) {
-        return  <MovieView movie={selectedMovie} />;
+        return  (
+          <MovieView
+          movie={selectedMovie}
+          onBackClick={() => {
+            setSelectedMovie(null);
+          }}
+          />
+        );
       }
 
       if (movies.length  === 0) {
@@ -67,9 +74,9 @@ export const MainView = () => {
             {movies.map((movie)=> (
                 <MovieCard 
                 key={movie.id}
-                book={movie}
-                onClick ={() => {
-                    setSelectedMovie(movie);
+                movie={movie}
+                onClick ={(newSelectedMovie) => {
+                    setSelectedMovie(newSelectedMovie);
                 }}
                 />
             ))}

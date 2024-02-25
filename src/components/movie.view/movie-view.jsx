@@ -21,6 +21,10 @@ export const  MovieView = ({ props, onBackClick }) =>  {
         <span>Genre: </span>
         <span>{props.genre}</span>
     </div>
+    <div>
+        <span>Featured: </span>
+        <span>{props.featured}</span>
+    </div>
     <button onClick={onBackClick}> Back </button>
  </div> 
     );

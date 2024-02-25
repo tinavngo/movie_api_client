@@ -1,5 +1,5 @@
 // Component prop here
-export const  MovieView = (props) =>  {
+export const  MovieView = ({ props, onBackClick }) =>  {
     return  (
     <div>
         <div>
@@ -21,6 +21,7 @@ export const  MovieView = (props) =>  {
         <span>Genre: </span>
         <span>{props.genre}</span>
     </div>
+    <button onClick={onBackClick}> Back </button>
  </div> 
     );
 };

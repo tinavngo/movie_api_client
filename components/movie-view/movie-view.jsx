@@ -1,29 +1,29 @@
 // Component prop here
-export const  MovieView = ({ props, onBackClick }) =>  {
+export const  MovieView = ({ movie, onBackClick }) =>  {
     return  (
     <div>
         <div>
-            <img src={props.image} alt={props.title}/>
+            <img src={movie.image} alt={movie.title}/>
         </div>
         <div>
             <span>Title: </span>
-            <span>{props.title}</span>
+            <span>{movie.title}</span>
         </div>
         <div>
         <span>Director: </span>
-        <span>{props.director}</span>
+        <span>{movie.director}</span>
     </div>
     <div>
         <span>Description: </span>
-        <span>{props.description}</span>
+        <span>{movie.description}</span>
     </div>
     <div>
         <span>Genre: </span>
-        <span>{props.genre}</span>
+        <span>{movie.genre}</span>
     </div>
     <div>
         <span>Featured: </span>
-        <span>{props.featured}</span>
+        <span>{movie.featured}</span>
     </div>
     <button onClick={onBackClick}> Back </button>
  </div> 

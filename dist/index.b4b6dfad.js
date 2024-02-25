@@ -2949,35 +2949,35 @@ try {
 //Imported components
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _client = require("react-dom/client");
-var _mainView = require("./components/main-view/main-view");
+var _mainView = require("../components/main-view/main-view");
 //Import statement to indicate that you need to bundle `./index.scss`
 var _indexScss = require("./index.scss");
-const tinFlicksApplication = ()=>{
+const TinFlicksApplication = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _mainView.MainView), {}, void 0, false, {
         fileName: "src/index.jsx",
         lineNumber: 10,
         columnNumber: 8
     }, undefined);
 };
-_c = tinFlicksApplication;
+_c = TinFlicksApplication;
 //Finds the root of app
 const container = document.querySelector("#root");
 const root = (0, _client.createRoot)(container);
 //Tells React to render app in the root DOM element
-root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("tinFlicksApplication", {}, void 0, false, {
+root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(TinFlicksApplication, {}, void 0, false, {
     fileName: "src/index.jsx",
     lineNumber: 18,
     columnNumber: 13
 }, undefined));
 var _c;
-$RefreshReg$(_c, "tinFlicksApplication");
+$RefreshReg$(_c, "TinFlicksApplication");
 
   $parcel$ReactRefreshHelpers$98a3.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react-dom/client":"lOjBx","./components/main-view/main-view":"4gflv","./index.scss":"lJZlQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"OcDH2"}],"iTorj":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react-dom/client":"lOjBx","./index.scss":"lJZlQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"OcDH2","../components/main-view/main-view":"bJOVs"}],"iTorj":[function(require,module,exports) {
 "use strict";
 module.exports = require("ee51401569654d91");
 
@@ -27164,173 +27164,7 @@ module.exports = require("ef03b89c8fe2794e");
     /* global __REACT_DEVTOOLS_GLOBAL_HOOK__ */ if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop === "function") __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop(new Error());
 })();
 
-},{}],"4gflv":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$f7a6 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$f7a6.prelude(module);
-
-try {
-// Component for MovieCard
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "MainView", ()=>MainView);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _movieCard = require("../movie-card/movie-card");
-var _movieView = require("../movie.view/movie-view");
-var _s = $RefreshSig$();
-const MainView = ()=>{
-    _s();
-    const [movies, setMovies] = (0, _react.useState)([
-        {
-            id: 1,
-            title: "Curse of the Blair Witch",
-            image: "https://m.media-amazon.com/images/I/71NdPnAPvWL._AC_UY218_.jpg",
-            description: "The uncensored investigation into disappearances of the three film-makers in 1994.",
-            genre: "Horror",
-            director: "Marijn Haverbeke"
-        },
-        {
-            id: 2,
-            title: "Perfect Blue",
-            image: "https://m.media-amazon.com/images/I/81iE8bYtHUL._AC_UY218_.jpg",
-            description: "A young Japanese singer is encouraged by her agent to quit singing and pursue an acting career, beginning with a role in a murder mystery TV show.",
-            genre: "Mystery",
-            director: "Satoshi Kon"
-        },
-        {
-            id: 3,
-            title: "Blade Runner 2049",
-            image: "https://m.media-amazon.com/images/I/91XUYVDsPAL._AC_UY218_.jpg",
-            description: "Officer K (Ryan Gosling), a new blade runner for the Los Angeles Police Department, unearths a long-buried secret that has the potential to plunge what's left of society into chaos.",
-            genre: "Thriller",
-            director: "Denis Villeneuve"
-        },
-        {
-            id: 4,
-            title: "Fear and Loathing in Las Vegas",
-            image: "https://m.media-amazon.com/images/I/810zs8ZBFwL._AC_UY218_.jpg",
-            description: "Raoul Duke (Johnny Depp) and his attorney Dr. Gonzo (Benicio del Toro) drive a red convertible across the Mojave desert to Las Vegas with a suitcase full of drugs to cover a motorcycle race.",
-            genre: "Comedy",
-            director: "Terry Gilliam"
-        },
-        {
-            id: 5,
-            title: "Once Upon a Time... in Hollywood",
-            image: "https://m.media-amazon.com/images/I/91IDTwTxsfL._AC_UY218_.jpg",
-            description: "Actor Rick Dalton gained fame and fortune by starring in a 1950s television Western, but is now struggling to find meaningful work in a Hollywood that he doesn't recognize anymore.",
-            genre: "Crime",
-            director: "Quentin Tarantino"
-        }
-    ]);
-    // identify whether there was a user click or not
-    const [selectedMovie, setSelectedMovie] = (0, _react.useState)(null);
-    if (selectedMovie) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieView.MovieView), {
-        movie: selectedMovie,
-        onBackClick: ()=>{
-            setSelectedMovie(null);
-        }
-    }, void 0, false, {
-        fileName: "src/components/main-view/main-view.jsx",
-        lineNumber: 60,
-        columnNumber: 11
-    }, undefined);
-    if (movies.length === 0) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        children: "The list is empty!"
-    }, void 0, false, {
-        fileName: "src/components/main-view/main-view.jsx",
-        lineNumber: 70,
-        columnNumber: 16
-    }, undefined);
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        children: movies.map((movie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieCard.MovieCard), {
-                movie: movie,
-                onClick: (newSelectedMovie)=>{
-                    setSelectedMovie(newSelectedMovie);
-                }
-            }, movie.id, false, {
-                fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 75,
-                columnNumber: 17
-            }, undefined))
-    }, void 0, false, {
-        fileName: "src/components/main-view/main-view.jsx",
-        lineNumber: 73,
-        columnNumber: 9
-    }, undefined);
-};
-_s(MainView, "VnDZflEKnrLBJV/x/Iqm6pubnIo=");
-_c = MainView;
-var _c;
-$RefreshReg$(_c, "MainView");
-
-  $parcel$ReactRefreshHelpers$f7a6.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../movie-card/movie-card":"bwuIu","../movie.view/movie-view":"kBE02","@parcel/transformer-js/src/esmodule-helpers.js":"a9CfH","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"OcDH2"}],"bwuIu":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$67b2 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$67b2.prelude(module);
-
-try {
-//Component prop here
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "MovieCard", ()=>MovieCard);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-const MovieCard = (props)=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        children: props.movie.title
-    }, void 0, false, {
-        fileName: "src/components/movie-card/movie-card.jsx",
-        lineNumber: 3,
-        columnNumber: 12
-    }, undefined);
-};
-_c = MovieCard;
-var _c;
-$RefreshReg$(_c, "MovieCard");
-
-  $parcel$ReactRefreshHelpers$67b2.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"a9CfH","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"OcDH2"}],"a9CfH":[function(require,module,exports) {
-exports.interopDefault = function(a) {
-    return a && a.__esModule ? a : {
-        default: a
-    };
-};
-exports.defineInteropFlag = function(a) {
-    Object.defineProperty(a, "__esModule", {
-        value: true
-    });
-};
-exports.exportAll = function(source, dest) {
-    Object.keys(source).forEach(function(key) {
-        if (key === "default" || key === "__esModule" || Object.prototype.hasOwnProperty.call(dest, key)) return;
-        Object.defineProperty(dest, key, {
-            enumerable: true,
-            get: function() {
-                return source[key];
-            }
-        });
-    });
-    return dest;
-};
-exports.export = function(dest, destName, get) {
-    Object.defineProperty(dest, destName, {
-        enumerable: true,
-        get: get
-    });
-};
-
-},{}],"OcDH2":[function(require,module,exports) {
+},{}],"lJZlQ":[function() {},{}],"OcDH2":[function(require,module,exports) {
 "use strict";
 var Refresh = require("14a4bf4643a7022c");
 function debounce(func, delay) {
@@ -27468,11 +27302,185 @@ function registerExportsForReactRefresh(module1) {
     }
 }
 
-},{"14a4bf4643a7022c":"gIEHd"}],"kBE02":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$44ec = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+},{"14a4bf4643a7022c":"gIEHd"}],"bJOVs":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$f6a9 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$44ec.prelude(module);
+$parcel$ReactRefreshHelpers$f6a9.prelude(module);
+
+try {
+// Component for MovieCard
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "MainView", ()=>MainView);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _movieCard = require("../movie-card/movie-card");
+var _movieView = require("../movie-view/movie-view");
+var _s = $RefreshSig$();
+const MainView = ()=>{
+    _s();
+    const [movies, setMovies] = (0, _react.useState)([
+        {
+            id: 1,
+            title: "Curse of the Blair Witch",
+            image: "https://m.media-amazon.com/images/I/71NdPnAPvWL._AC_UY218_.jpg",
+            description: "The uncensored investigation into disappearances of the three film-makers in 1994.",
+            genre: "Horror",
+            director: "Marijn Haverbeke",
+            featured: true
+        },
+        {
+            id: 2,
+            title: "Perfect Blue",
+            image: "https://m.media-amazon.com/images/I/81iE8bYtHUL._AC_UY218_.jpg",
+            description: "A young Japanese singer is encouraged by her agent to quit singing and pursue an acting career, beginning with a role in a murder mystery TV show.",
+            genre: "Mystery",
+            director: "Satoshi Kon",
+            featured: false
+        },
+        {
+            id: 3,
+            title: "Blade Runner 2049",
+            image: "https://m.media-amazon.com/images/I/91XUYVDsPAL._AC_UY218_.jpg",
+            description: "Officer K (Ryan Gosling), a new blade runner for the Los Angeles Police Department, unearths a long-buried secret that has the potential to plunge what's left of society into chaos.",
+            genre: "Thriller",
+            director: "Denis Villeneuve",
+            featured: false
+        },
+        {
+            id: 4,
+            title: "Fear and Loathing in Las Vegas",
+            image: "https://m.media-amazon.com/images/I/810zs8ZBFwL._AC_UY218_.jpg",
+            description: "Raoul Duke (Johnny Depp) and his attorney Dr. Gonzo (Benicio del Toro) drive a red convertible across the Mojave desert to Las Vegas with a suitcase full of drugs to cover a motorcycle race.",
+            genre: "Comedy",
+            director: "Terry Gilliam",
+            featured: false
+        },
+        {
+            id: 5,
+            title: "Once Upon a Time... in Hollywood",
+            image: "https://m.media-amazon.com/images/I/91IDTwTxsfL._AC_UY218_.jpg",
+            description: "Actor Rick Dalton gained fame and fortune by starring in a 1950s television Western, but is now struggling to find meaningful work in a Hollywood that he doesn't recognize anymore.",
+            genre: "Crime",
+            director: "Quentin Tarantino",
+            featured: true
+        }
+    ]);
+    // identify whether there was a user click or not
+    const [selectedMovie, setSelectedMovie] = (0, _react.useState)(null);
+    if (selectedMovie) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieView.MovieView), {
+        movie: selectedMovie,
+        onBackClick: ()=>{
+            setSelectedMovie(null);
+        }
+    }, void 0, false, {
+        fileName: "components/main-view/main-view.jsx",
+        lineNumber: 66,
+        columnNumber: 11
+    }, undefined);
+    if (movies.length === 0) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        children: "The list is empty!"
+    }, void 0, false, {
+        fileName: "components/main-view/main-view.jsx",
+        lineNumber: 76,
+        columnNumber: 16
+    }, undefined);
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        children: movies.map((movie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieCard.MovieCard), {
+                movie: movie,
+                onMovieClick: (newSelectedMovie)=>{
+                    setSelectedMovie(newSelectedMovie);
+                }
+            }, movie.id, false, {
+                fileName: "components/main-view/main-view.jsx",
+                lineNumber: 81,
+                columnNumber: 17
+            }, undefined))
+    }, void 0, false, {
+        fileName: "components/main-view/main-view.jsx",
+        lineNumber: 79,
+        columnNumber: 9
+    }, undefined);
+};
+_s(MainView, "FFrMrIn7WVpVlZWJ5hrJWgm43oQ=");
+_c = MainView;
+var _c;
+$RefreshReg$(_c, "MainView");
+
+  $parcel$ReactRefreshHelpers$f6a9.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../movie-card/movie-card":"8z54c","../movie-view/movie-view":"lNY7v","@parcel/transformer-js/src/esmodule-helpers.js":"a9CfH","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"OcDH2"}],"8z54c":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$42ca = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$42ca.prelude(module);
+
+try {
+//Component prop here
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "MovieCard", ()=>MovieCard);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+const MovieCard = ({ movie, onMovieClick })=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        onClick: ()=>{
+            onMovieClick(movie);
+        },
+        children: movie.title
+    }, void 0, false, {
+        fileName: "components/movie-card/movie-card.jsx",
+        lineNumber: 4,
+        columnNumber: 5
+    }, undefined);
+};
+_c = MovieCard;
+var _c;
+$RefreshReg$(_c, "MovieCard");
+
+  $parcel$ReactRefreshHelpers$42ca.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"a9CfH","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"OcDH2"}],"a9CfH":[function(require,module,exports) {
+exports.interopDefault = function(a) {
+    return a && a.__esModule ? a : {
+        default: a
+    };
+};
+exports.defineInteropFlag = function(a) {
+    Object.defineProperty(a, "__esModule", {
+        value: true
+    });
+};
+exports.exportAll = function(source, dest) {
+    Object.keys(source).forEach(function(key) {
+        if (key === "default" || key === "__esModule" || Object.prototype.hasOwnProperty.call(dest, key)) return;
+        Object.defineProperty(dest, key, {
+            enumerable: true,
+            get: function() {
+                return source[key];
+            }
+        });
+    });
+    return dest;
+};
+exports.export = function(dest, destName, get) {
+    Object.defineProperty(dest, destName, {
+        enumerable: true,
+        get: get
+    });
+};
+
+},{}],"lNY7v":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$2e96 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$2e96.prelude(module);
 
 try {
 // Component prop here
@@ -27480,19 +27488,20 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "MovieView", ()=>MovieView);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
-const MovieView = (props)=>{
+const MovieView = ({ movie, onBackClick })=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                    src: props.image
+                    src: movie.image,
+                    alt: movie.title
                 }, void 0, false, {
-                    fileName: "src/components/movie.view/movie-view.jsx",
+                    fileName: "components/movie-view/movie-view.jsx",
                     lineNumber: 6,
                     columnNumber: 13
                 }, undefined)
             }, void 0, false, {
-                fileName: "src/components/movie.view/movie-view.jsx",
+                fileName: "components/movie-view/movie-view.jsx",
                 lineNumber: 5,
                 columnNumber: 9
             }, undefined),
@@ -27501,20 +27510,20 @@ const MovieView = (props)=>{
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                         children: "Title: "
                     }, void 0, false, {
-                        fileName: "src/components/movie.view/movie-view.jsx",
+                        fileName: "components/movie-view/movie-view.jsx",
                         lineNumber: 9,
                         columnNumber: 13
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                        children: props.title
+                        children: movie.title
                     }, void 0, false, {
-                        fileName: "src/components/movie.view/movie-view.jsx",
+                        fileName: "components/movie-view/movie-view.jsx",
                         lineNumber: 10,
                         columnNumber: 13
                     }, undefined)
                 ]
             }, void 0, true, {
-                fileName: "src/components/movie.view/movie-view.jsx",
+                fileName: "components/movie-view/movie-view.jsx",
                 lineNumber: 8,
                 columnNumber: 9
             }, undefined),
@@ -27523,20 +27532,20 @@ const MovieView = (props)=>{
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                         children: "Director: "
                     }, void 0, false, {
-                        fileName: "src/components/movie.view/movie-view.jsx",
+                        fileName: "components/movie-view/movie-view.jsx",
                         lineNumber: 13,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                        children: props.directors
+                        children: movie.director
                     }, void 0, false, {
-                        fileName: "src/components/movie.view/movie-view.jsx",
+                        fileName: "components/movie-view/movie-view.jsx",
                         lineNumber: 14,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
-                fileName: "src/components/movie.view/movie-view.jsx",
+                fileName: "components/movie-view/movie-view.jsx",
                 lineNumber: 12,
                 columnNumber: 9
             }, undefined),
@@ -27545,20 +27554,20 @@ const MovieView = (props)=>{
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                         children: "Description: "
                     }, void 0, false, {
-                        fileName: "src/components/movie.view/movie-view.jsx",
+                        fileName: "components/movie-view/movie-view.jsx",
                         lineNumber: 17,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                        children: props.description
+                        children: movie.description
                     }, void 0, false, {
-                        fileName: "src/components/movie.view/movie-view.jsx",
+                        fileName: "components/movie-view/movie-view.jsx",
                         lineNumber: 18,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
-                fileName: "src/components/movie.view/movie-view.jsx",
+                fileName: "components/movie-view/movie-view.jsx",
                 lineNumber: 16,
                 columnNumber: 5
             }, undefined),
@@ -27567,26 +27576,56 @@ const MovieView = (props)=>{
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                         children: "Genre: "
                     }, void 0, false, {
-                        fileName: "src/components/movie.view/movie-view.jsx",
+                        fileName: "components/movie-view/movie-view.jsx",
                         lineNumber: 21,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                        children: props.genre
+                        children: movie.genre
                     }, void 0, false, {
-                        fileName: "src/components/movie.view/movie-view.jsx",
+                        fileName: "components/movie-view/movie-view.jsx",
                         lineNumber: 22,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
-                fileName: "src/components/movie.view/movie-view.jsx",
+                fileName: "components/movie-view/movie-view.jsx",
                 lineNumber: 20,
+                columnNumber: 5
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                        children: "Featured: "
+                    }, void 0, false, {
+                        fileName: "components/movie-view/movie-view.jsx",
+                        lineNumber: 25,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                        children: movie.featured
+                    }, void 0, false, {
+                        fileName: "components/movie-view/movie-view.jsx",
+                        lineNumber: 26,
+                        columnNumber: 9
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "components/movie-view/movie-view.jsx",
+                lineNumber: 24,
+                columnNumber: 5
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                onClick: onBackClick,
+                children: " Back "
+            }, void 0, false, {
+                fileName: "components/movie-view/movie-view.jsx",
+                lineNumber: 28,
                 columnNumber: 5
             }, undefined)
         ]
     }, void 0, true, {
-        fileName: "src/components/movie.view/movie-view.jsx",
+        fileName: "components/movie-view/movie-view.jsx",
         lineNumber: 4,
         columnNumber: 5
     }, undefined);
@@ -27595,11 +27634,11 @@ _c = MovieView;
 var _c;
 $RefreshReg$(_c, "MovieView");
 
-  $parcel$ReactRefreshHelpers$44ec.postlude(module);
+  $parcel$ReactRefreshHelpers$2e96.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"a9CfH","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"OcDH2"}],"lJZlQ":[function() {},{}]},["5q9U0","iwa7E","d8Dch"], "d8Dch", "parcelRequire8cf1")
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"a9CfH","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"OcDH2"}]},["5q9U0","iwa7E","d8Dch"], "d8Dch", "parcelRequire8cf1")
 
 //# sourceMappingURL=index.b4b6dfad.js.map

@@ -6,7 +6,7 @@ import { MainView } from './components/main-view/main-view';
 //Import statement to indicate that you need to bundle `./index.scss`
 import  "./index.scss";
 
-const tinFlicksApplication = () => {
+const TinFlicksApplication = () => {
 return <MainView />
 };
 
@@ -15,4 +15,4 @@ const container = document.querySelector("#root");
 const root = createRoot(container);
 
 //Tells React to render app in the root DOM element
-root.render(<tinFlicksApplication />);
+root.render(<TinFlicksApplication />);

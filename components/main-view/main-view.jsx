@@ -18,6 +18,8 @@ export const MainView = () => {
             Description: movie.Description,
             MPAARating: movie.MPAARating,
             ReleaseYear: movie.ReleaseYear,
+            ImagePath: movie.ImagePath,
+            Featured: movie.Featured,
 
             Genre: {
               Name: movie.Genre.Name
@@ -35,7 +37,7 @@ export const MainView = () => {
    
       // identify whether there was a user click or not
       const [selectedMovie, setSelectedMovie] = useState(null);
-      
+
       if(selectedMovie) {
         return  (
           <MovieView

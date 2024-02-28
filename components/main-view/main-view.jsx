@@ -1,5 +1,5 @@
 // Component for MovieCard
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { MovieCard } from "../movie-card/movie-card";
 import { MovieView } from "../movie-view/movie-view";
 
@@ -55,12 +55,29 @@ export const MainView = () => {
           director: "Quentin Tarantino",
           featured: true
 
-        }
-      ]);
+            _id: movie._id,
+            Title: movie.Title,
+            Description: movie.Description,
+            MPAARating: movie.MPAARating,
+            ReleaseYear: movie.ReleaseYear,
 
+            Genre: {
+              Name: movie.Genre.Name
+            },
+
+            Director: {
+              Name: movie.Director.Name
+            }
+
+          };
+        });
+        setMovies(moviesFromApi);
+      });
+    }, []);
+   
       // identify whether there was a user click or not
       const [selectedMovie, setSelectedMovie] = useState(null);
-
+      
       if(selectedMovie) {
         return  (
           <MovieView

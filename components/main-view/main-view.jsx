@@ -10,7 +10,7 @@ export const MainView = () => {
       fetch("https://tinflicks-2bf7ff98613b.herokuapp.com/movies")
       .then((response) => response.json())
       .then((data) => {
-        const moviesFromApi = data.docs.map((movie) => {
+        const moviesFromApi = data.map((movie) => {
           return {
 
             _id: movie._id,
@@ -57,7 +57,10 @@ export const MainView = () => {
             {movies.map((movie)=> (
                 <MovieCard 
                 key={movie._id}
-                movie={movie}
+                movie={{
+                  ...movie,
+                Featured: movie.Featured === "true", //Convert string "true" to boolean
+              }}
                 onMovieClick ={(newSelectedMovie) => {
                     setSelectedMovie(newSelectedMovie);
                 }}

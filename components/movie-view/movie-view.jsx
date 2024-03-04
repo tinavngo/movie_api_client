@@ -24,6 +24,14 @@ export const  MovieView = ({ movie, onBackClick }) =>  {
         <span>{movie.Genre.Name}</span>
     </div>
     <div>
+        <span>MPAA Rating: </span>
+        <span>{movie.MPAARating}</span>
+    </div>
+    <div>
+        <span>Release Year: </span>
+        <span>{movie.ReleaseYear}</span>
+    </div>
+    <div>
         <span>Featured: </span>
         <span>{movie.Featured}</span>
     </div>
@@ -43,12 +51,14 @@ MovieView.propTypes = {
             Name: PropTypes.string.isRequired,
         }).isRequired,
 
-        Featured: PropTypes.bool.isRequired,
-
         Director: PropTypes.shape({
             Name: PropTypes.string.isRequired,
-        }),
+        }).isRequired,
+
+        Featured: PropTypes.bool.isRequired,
+        MPAARating: PropTypes.string.isRequired,
+        ReleaseYear: PropTypes.number.isRequired,
         ImagePath: PropTypes.string.isRequired,
-    }).isRequired,
+        }).isRequired,
 onBackClick: PropTypes.func.isRequired,
 };

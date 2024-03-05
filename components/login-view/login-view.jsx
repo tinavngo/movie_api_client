@@ -1,5 +1,4 @@
-import React from "react";
-import { useState } from "react";
+import { React, useState } from "react";
 
 export const LoginView = ({ onLoggedIn }) => {
     const [username, setUsername] = useState("");
@@ -13,7 +12,7 @@ export const LoginView = ({ onLoggedIn }) => {
             secret: password
         };
 
-        fetch("https://tinflicks-2bf7ff98613b.herokuapp.com/login.json", {
+        fetch("https://tinflicks-2bf7ff98613b.herokuapp.com/login", {
             method: "POST",
             headers: {
                 "Content Type" : "application/json"
@@ -24,7 +23,7 @@ export const LoginView = ({ onLoggedIn }) => {
           .then((data) => {
             console.log("Login response: ", data);
             if (data.user) {
-                localStorage.setItem("user", data.use);
+                localStorage.setItem("user", JSON.stringify(data.user));
                 localStorage.setItem("token", data.token);
                 onLoggedIn(data.user, data.token);
             } else {

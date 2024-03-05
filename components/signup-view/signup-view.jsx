@@ -1,5 +1,5 @@
-import React from "react";
-import{ useState } from "react";
+import { React, useState } from "react";
+
 
 export const SignupView = () => {
     const [username, setUsername] = useState("");
@@ -42,8 +42,8 @@ export const SignupView = () => {
                     type="text"
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}
+                    minLength={3}
                     required
-                    minLength="3"
                 />    
             </label>
             <br></br>
@@ -57,25 +57,27 @@ export const SignupView = () => {
                 />
                 <br></br>
                 <label>
-                    Birthday:
-                    <input
-                        type="date"
-                        value={birthday}
-                        onChange={(e) => setBirthday(e.target.value)}
-                    />
-                </label>
-                <br></br>
-                <label>
                     Password:
                     <input
                         type="password"
-                        minLength={8}
+                        minLength={5}
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                         required
                         />
                 </label>
                 <br></br>
+                <label>
+                    Birthday:
+                    <input
+                        type="date"
+                        value={birthday}
+                        onChange={(e) => setBirthday(e.target.value)}
+                        required
+                    />
+                </label>
+                <br></br>
+
                 <button type="submit">Sign Up</button>
             </label>
         </form>

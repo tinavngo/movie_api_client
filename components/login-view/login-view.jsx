@@ -8,14 +8,14 @@ export const LoginView = ({ onLoggedIn }) => {
         event.preventDefault(); //This prevents the default behavior of the form which is to reload the entire page
 
         const data = {
-            access: username,
-            secret: password
+            Username: username,
+            Password: password
         };
 
         fetch("https://tinflicks-2bf7ff98613b.herokuapp.com/login", {
             method: "POST",
             headers: {
-                "Content Type" : "application/json"
+                "Content-Type" : "application/json"
             },
             body: JSON.stringify(data)
         })

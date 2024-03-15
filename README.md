@@ -4,7 +4,9 @@
 This application allows users to create an account to view popular movies and organize a list of their favorite movies.
 Main features include displaying, and updating DOM according to users' needs while navigating the web application.
 ## Framework: 
-React and React DOM
+React, React DOM, Bootstrap and React-Bootstrap
+
+npm install install react-bootstrap bootstrap
 npm install --save react react-dom
 
 ## Build tools/Dependencies:

@@ -1,4 +1,5 @@
 import { React, useState } from "react";
+import { Button, Form, Container, Row, Col, CardGroup, Card } from "react-bootstrap";
 
 
 export const SignupView = () => {
@@ -24,62 +25,75 @@ export const SignupView = () => {
                 "Content-Type": "application/json"
             }
         })
-        .then((response) => {
-            if (response.ok) {
-                alert("Signup successful");
-                window.location.reload();
-            } else {
-                alert("Signup failed");
-            }
-        });
+            .then((response) => {
+                if (response.ok) {
+                    alert("Signup successful");
+                    window.location.reload();
+                } else {
+                    alert("Signup failed");
+                }
+            });
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <label>
-                Username:
-                <input
-                    type="text"
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
-                    minLength={3}
-                    required
-                />    
-            </label>
-            <br></br>
-            <label>
-                Email:
-                <input
-                    type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
-                />
-                <br></br>
-                <label>
-                    Password:
-                    <input
-                        type="password"
-                        minLength={5}
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        required
-                        />
-                </label>
-                <br></br>
-                <label>
-                    Birthday:
-                    <input
-                        type="date"
-                        value={birthday}
-                        onChange={(e) => setBirthday(e.target.value)}
-                        required
-                    />
-                </label>
-                <br></br>
+        <Container>
+            <Row>
+                <Col>
+                    <CardGroup>
+                        <Card>
+                            <Card.Body>
+                                <Form onSubmit={handleSubmit}>
+                                    <br />
+                                    <h1>Create an account</h1>
+                                    <br />
+                                    <Form.Group control Id="formusername">
+                                        <Form.Label>Username:</Form.Label>
+                                        <Form.Control
+                                            type="text"
+                                            value={username}
+                                            onChange={(e) => setUsername(e.target.value)}
+                                            required
+                                            minLength="3"
+                                        />
+                                    </Form.Group>
+                                    <Form.Group>
+                                        <Form.Label>Email:</Form.Label>
+                                        <Form.Control
+                                            type="email"
+                                            value={email}
+                                            onChange={(e) => setEmail(e.target.value)}
+                                            required
+                                        />
+                                    </Form.Group>
+                                    <Form.Group>
+                                        <Form.Label>Password:</Form.Label>
+                                        <Form.Control
+                                            type="password"
+                                            value={password}
+                                            onChange={(e) => setPassword(e.target.value)}
+                                            required
+                                        />
+                                    </Form.Group>
+                                    <Form.Group>
+                                        <Form.Label>Birthday:</Form.Label>
+                                        <Form.Control
+                                            type="date"
+                                            value={birthday}
+                                            onChange={(e) => setBirthday(e.target.value)}
+                                            required
+                                        />
+                                    </Form.Group>
+                                    <br/>
+                                    <Button variant="primary" type="submit">
+                                        Sign Up!
+                                    </Button>
+                                </Form>
+                            </Card.Body>
+                        </Card>
+                    </CardGroup>
+                </Col>
+            </Row>
+        </Container>
 
-                <button type="submit">Sign Up</button>
-            </label>
-        </form>
     );
-    }
+}

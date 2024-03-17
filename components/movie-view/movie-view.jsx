@@ -1,12 +1,20 @@
-import PropTypes from "prop-types";
 import Button from "react-bootstrap/Button";
+import { useParams } from "react-router";
+import { Link } from "react-router-dom";
+import Row from "react-bootstrap/Row";
+import PropTypes from "prop-types";
 
 // Component prop here
-export const MovieView = ({ movie, onBackClick }) => {
+export const MovieView = ({ movies }) => {
+
+    const { MovieId } = useParams();
+    const movie = movies.find((m) => m._id === MovieId);
+    console.log(movie);
+
     return (
         <div>
             <div>
-                <img src={movie.ImagePath} alt={movie.title} />
+                <img src={movie.ImagePath} alt={movie.Title} />
             </div>
             <div>
                 <span>Title: </span>
@@ -32,7 +40,9 @@ export const MovieView = ({ movie, onBackClick }) => {
                 <span>Release Year: </span>
                 <span>{movie.ReleaseYear}</span>
             </div>
-            <Button onClick={onBackClick}> Back </Button>
+            <Link to={`/`}>
+            <Button> Back </Button>
+            </Link>
         </div>
     );
 };
@@ -56,6 +66,5 @@ MovieView.propTypes = {
         MPAARating: PropTypes.string.isRequired,
         ReleaseYear: PropTypes.number.isRequired,
         ImagePath: PropTypes.string.isRequired,
-    }).isRequired,
-    onBackClick: PropTypes.func.isRequired,
+    }).isRequired
 };

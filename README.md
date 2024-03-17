@@ -10,7 +10,7 @@ npm install install react-bootstrap bootstrap
 npm install --save react react-dom
 
 ## Build tools/Dependencies:
-Parcel and Process
+Parcel, React Router, React Router Dom and Process
 npm install -g parcel
 npm install -g process
 

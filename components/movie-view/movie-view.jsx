@@ -1,70 +1,50 @@
 import Button from "react-bootstrap/Button";
+import Row from "react-bootstrap/Row"
+import Col from "react-bootstrap/Col";
 import { useParams } from "react-router";
 import { Link } from "react-router-dom";
-import Row from "react-bootstrap/Row";
-import PropTypes from "prop-types";
+import "./movie-view.scss";
 
 // Component prop here
 export const MovieView = ({ movies }) => {
 
-    const { MovieId } = useParams();
-    const movie = movies.find((m) => m._id === MovieId);
-    console.log(movie);
+    const { movieID } = useParams();
+    const movie = movies.find((movie) => movie._id === movieID);
 
     return (
-        <div>
-            <div>
-                <img src={movie.ImagePath} alt={movie.Title} />
-            </div>
-            <div>
-                <span>Title: </span>
-                <span>{movie.Title}</span>
-            </div>
-            <div>
-                <span>Director: </span>
-                <span>{movie.Director.Name}</span>
-            </div>
-            <div>
-                <span>Description: </span>
-                <span>{movie.Description}</span>
-            </div>
-            <div>
-                <span>Genre: </span>
-                <span>{movie.Genre.Name}</span>
-            </div>
-            <div>
-                <span>MPAA Rating: </span>
-                <span>{movie.MPAARating}</span>
-            </div>
-            <div>
-                <span>Release Year: </span>
-                <span>{movie.ReleaseYear}</span>
-            </div>
-            <Link to={`/`}>
-            <Button> Back </Button>
-            </Link>
-        </div>
+        <>
+            <Row className="my-5 justify-content-md-center">
+                <Col className="my-image-col">
+                    <img src={movie.ImagePath} alt={movie.Title} />
+                </Col>
+                <Col md={7} className="col-12">
+                    <Row className="my-1">
+                        <span className="h1">{movie.Title}</span>
+                    </Row>
+                    <Row className="my-1">
+                        <span className="h6">Description: </span>
+                        <span>{movie.Description}</span>
+                    </Row>
+                    <hr/>
+                    <Row className="my-1">
+                        <span className="h6">Director: </span>
+                        <span>{movie.Director.Name}</span>
+                    </Row>
+                    <Row className="my-1">
+                        <span className="h6">Genre: </span>
+                        <span>{movie.Genre.Name}</span>
+                    </Row>
+                    <Row>
+                        <span className="h6">Release Year: </span>
+                        <span>{movie.ReleaseYear}</span>
+                    </Row>
+                    <br/>
+                    <Link to={`/`}>
+                        <Button variant="primary"> Back </Button>
+                    </Link>
+                </Col>
+            </Row>
+        </>
     );
 };
 
-//MovieView PropTypes
-MovieView.propTypes = {
-
-    movie: PropTypes.shape({
-        Title: PropTypes.string.isRequired,
-        Description: PropTypes.string.isRequired,
-
-        Genre: PropTypes.shape({
-            Name: PropTypes.string.isRequired,
-        }).isRequired,
-
-        Director: PropTypes.shape({
-            Name: PropTypes.string.isRequired,
-        }).isRequired,
-
-        Featured: PropTypes.bool.isRequired,
-        MPAARating: PropTypes.string.isRequired,
-        ReleaseYear: PropTypes.number.isRequired,
-        ImagePath: PropTypes.string.isRequired,
-    }).isRequired
-};

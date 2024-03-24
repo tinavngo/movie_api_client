@@ -1,9 +1,48 @@
-.card-shadow {
-    box-shadow: 5px 5px 15px 5px rgba(211, 211, 211, 0.4);
-}
 
 .card-img {
-    width: 150px; 
-    height: 400px; 
-    object-fit: fill;
+    display: block;
+    width: 100px; 
+    height: 300px; 
+    position: absolute;
+    object-fit: cover;
 }
+
+.movie-card {
+    display:flex;
+    cursor: pointer;
+    transition: 0.3s linear;
+}
+
+.heart-button1 {
+    cursor: pointer;
+    transition: 0.3s linear;
+    position: absolute;
+    border: 4px orange;
+    border-radius: 20%;
+    background-color: darkorange;
+    color:aliceblue;
+}
+
+.heart-button {
+    cursor: pointer;
+    transition: 0.3s linear;
+    position: absolute;
+    border: 4px orange;
+    border-radius: 20%;
+    background-color: whitesmoke;
+}
+
+.heart-button:hover {
+    transform: scale(1.2);
+}
+
+.movie-card:hover {
+    box-shadow: 10px 10px 10px 10px rgba(211, 211, 211, 0.4);
+}
+
+/* Small screens */
+@media (max-width: 768px) {
+    .col-sm-6 {
+      width: 50%;
+    }
+  }

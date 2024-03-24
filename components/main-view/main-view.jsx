@@ -1,5 +1,6 @@
 // Component for MovieCard
 import { useEffect, useState } from "react";
+import { AccountView } from "../account-view/account-view";
 import { MovieCard } from "../movie-card/movie-card";
 import { MovieView } from "../movie-view/movie-view";
 import { LoginView } from "../login-view/login-view";
@@ -130,8 +131,27 @@ export const MainView = () => {
           }
           />
         </Routes>
+            <Route
+              path="/account"
+              element={
+                <>
+                  {!user ? (
+                    <Navigate to="/login" replace />
+                  ) : (
+                    <Col>
+                      <AccountView
+                        user={user}
+                        movies={movies}
+                        setUser={setUser}
+                      />
+                    </Col>
+                  )}
+                </>
+              }
+            />
+          </Routes>
+        </Row>
       </Row>
-    </Row>
     </BrowserRouter>
   );
 };

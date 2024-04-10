@@ -159,9 +159,9 @@ const removeFavorite = (id) => {
                   ) : movies.length === 0 ? (
                     <Col>Movie not available!</Col>
                   ) : (
-                    <Col sm={3} md={5} lg={6} xl={6
+                    <Col sm={8} md={5} lg={6} xl={6}
                     
-                    }>
+                    >
                       <MovieView 
                       movies={movies}
                       addFavorite={addFavorite}
@@ -183,7 +183,7 @@ const removeFavorite = (id) => {
                   ) : (
                     <>
                       {movies.map((movie) => (
-                        <Col className="mb-5" key={movie._id} md={3}>
+                        <Col className="mb-3 mt-3" key={movie._id} md={3} sm={2}>
                           <MovieCard 
                           movie={movie}
                           removeFavorite={removeFavorite}

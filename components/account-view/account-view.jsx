@@ -118,10 +118,12 @@ export const AccountView = ({ user, token, setUser }) => {
                                 placeholder={user.Birthday}
                             />
                         </Form.Group>
-                        <Button type="submit" onClick={handleUpdate} className="mt-3">Update</Button>
+                        <br/>
+                        <Button type="submit" onClick={handleUpdate} className="mt-3 bottom-0">Update</Button>
                         <br/>
                         <br/>
-                        <Button onClick={handleDelete} className="mt-3 bg-danger border-danger text-white" size="sm" >Delete Account</Button>
+                        <hr/>
+                        <Button onClick={handleDelete} className="btn-delete mt-3 bg-danger border-danger text-white" size="sm" >Delete Account</Button>
                     </Form>
                 </Col>
             </Row>

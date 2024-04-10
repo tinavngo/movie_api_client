@@ -36,6 +36,7 @@
 }
 
 .movie-card:hover {
+  transform: scale(1.05);
   box-shadow: 10px 10px 10px 10px #d3d3d366;
 }
 
@@ -128,8 +129,8 @@
   --bs-body-line-height: 1.5;
   --bs-body-color: #212529;
   --bs-body-color-rgb: 33, 37, 41;
-  --bs-body-bg: #fff;
-  --bs-body-bg-rgb: 255, 255, 255;
+  --bs-body-bg: #a9a9a92b;
+  --bs-body-bg-rgb: 169, 169, 169;
   --bs-emphasis-color: #000;
   --bs-emphasis-color-rgb: 0, 0, 0;
   --bs-secondary-color: #212529bf;
@@ -2708,11 +2709,11 @@ textarea.form-control-lg {
 }
 
 .form-range:focus::-webkit-slider-thumb {
-  box-shadow: 0 0 0 1px #fff, 0 0 0 .25rem #ff8c0040;
+  box-shadow: 0 0 0 1px #a9a9a92b, 0 0 0 .25rem #ff8c0040;
 }
 
 .form-range:focus::-moz-range-thumb {
-  box-shadow: 0 0 0 1px #fff, 0 0 0 .25rem #ff8c0040;
+  box-shadow: 0 0 0 1px #a9a9a92b, 0 0 0 .25rem #ff8c0040;
 }
 
 .form-range::-moz-focus-outer {

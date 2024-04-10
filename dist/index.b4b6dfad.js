@@ -27379,7 +27379,7 @@ const MainView = ()=>{
                                         lineNumber: 160,
                                         columnNumber: 21
                                     }, void 0) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
-                                        sm: 3,
+                                        sm: 8,
                                         md: 5,
                                         lg: 6,
                                         xl: 6,
@@ -27421,8 +27421,9 @@ const MainView = ()=>{
                                         columnNumber: 21
                                     }, void 0) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
                                         children: movies.map((movie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
-                                                className: "mb-5",
+                                                className: "mb-3 mt-3",
                                                 md: 3,
+                                                sm: 2,
                                                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieCard.MovieCard), {
                                                     movie: movie,
                                                     removeFavorite: removeFavorite,
@@ -47764,7 +47765,8 @@ const AccountView = ({ user, token, setUser })=>{
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
-                        md: 5,
+                        md: 6,
+                        sm: 2,
                         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card), {
                             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Body, {
                                 children: [
@@ -47782,7 +47784,7 @@ const AccountView = ({ user, token, setUser })=>{
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Img, {
                                         variant: "top",
-                                        src: "https://via.placeholder.com/250",
+                                        src: "https://i.redd.it/8khu7i1cwtrb1.jpg",
                                         className: "w-50 rounded"
                                     }, void 0, false, {
                                         fileName: "components/account-view/account-view.jsx",
@@ -47831,7 +47833,8 @@ const AccountView = ({ user, token, setUser })=>{
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
-                        md: 7,
+                        md: 5,
+                        sm: 2,
                         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form), {
                             onSubmit: handleUpdate,
                             children: [
@@ -47939,17 +47942,17 @@ const AccountView = ({ user, token, setUser })=>{
                                     lineNumber: 112,
                                     columnNumber: 25
                                 }, undefined),
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
-                                    type: "submit",
-                                    onClick: handleUpdate,
-                                    className: "mt-3",
-                                    children: "Update"
-                                }, void 0, false, {
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
                                     fileName: "components/account-view/account-view.jsx",
                                     lineNumber: 121,
                                     columnNumber: 25
                                 }, undefined),
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
+                                    type: "submit",
+                                    onClick: handleUpdate,
+                                    className: "mt-3 bottom-0",
+                                    children: "Update"
+                                }, void 0, false, {
                                     fileName: "components/account-view/account-view.jsx",
                                     lineNumber: 122,
                                     columnNumber: 25
@@ -47959,14 +47962,24 @@ const AccountView = ({ user, token, setUser })=>{
                                     lineNumber: 123,
                                     columnNumber: 25
                                 }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
+                                    fileName: "components/account-view/account-view.jsx",
+                                    lineNumber: 124,
+                                    columnNumber: 25
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("hr", {}, void 0, false, {
+                                    fileName: "components/account-view/account-view.jsx",
+                                    lineNumber: 125,
+                                    columnNumber: 25
+                                }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
                                     onClick: handleDelete,
-                                    className: "mt-3 bg-danger border-danger text-white",
+                                    className: "btn-delete mt-3 bg-danger border-danger text-white",
                                     size: "sm",
                                     children: "Delete Account"
                                 }, void 0, false, {
                                     fileName: "components/account-view/account-view.jsx",
-                                    lineNumber: 124,
+                                    lineNumber: 126,
                                     columnNumber: 25
                                 }, undefined)
                             ]

@@ -67,19 +67,19 @@ export const AccountView = ({ user, token, setUser }) => {
             <h2>Profile</h2>
             <br/>
             <Row>
-                <Col md={5}>
+                <Col md={6} sm={2}>
                     <Card>
                         <Card.Body>
                             <Card.Title>{user.Username}</Card.Title>
                             <br/>
-                            <Card.Img variant="top" src="https://via.placeholder.com/250" className="w-50 rounded" />
+                            <Card.Img variant="top" src="https://i.redd.it/8khu7i1cwtrb1.jpg" className="w-50 rounded" />
                             <hr/>
                             <Card.Text>Email: {user.Email}</Card.Text>
                             <Card.Text>Birthday: {user.Birthday}</Card.Text>
                         </Card.Body>
                     </Card>
                 </Col>
-                <Col md={7}>
+                <Col md={5} sm={2}>
                     <Form onSubmit={handleUpdate}>
                         <Form.Group controlId="formUsername">
                             <Form.Label>Username:</Form.Label>

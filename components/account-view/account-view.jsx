@@ -6,7 +6,6 @@ import { Button, Card, Form } from "react-bootstrap";
 export const AccountView = ({ user, setUser }) => {
 
     const [username, setUsername] = useState(user.Username);
-    const [password, setPassword] = useState(user.Password);
     const [email, setEmail] = useState(user.Email);
     const [birthday, setBirthday] = useState(user.Birthday);
 
@@ -23,7 +22,6 @@ export const AccountView = ({ user, setUser }) => {
 
         const data = {
             Username: username,
-            Password: password,
             Email: email,
             Birthday: birthday
         };
@@ -52,24 +50,24 @@ export const AccountView = ({ user, setUser }) => {
     };
 
 
-        //DELETE user account
-        const handleDelete = () => {
-            fetch(`https://tinflicks-2bf7ff98613b.herokuapp.com/users/${user.Username}`, {
-                method: "DELETE",
-                headers: {
-                    Authorization: `Bearer ${token}`
-                }
-            }).then((response) => {
-                if (response.ok) {
-                    setUser(null);
-                    alert("User has been deleted")
-                    localStorage.clear();
-                    nav('/'); //Back to login/signup
-                } else {
-                    alert("Something went wrong.")
-                }
-            })
-        }
+    //DELETE user account
+    const handleDelete = () => {
+        fetch(`https://tinflicks-2bf7ff98613b.herokuapp.com/users/${user.Username}`, {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${token}`
+            }
+        }).then((response) => {
+            if (response.ok) {
+                alert("User has been deleted")
+                localStorage.clear();
+                nav('/'); //Back to login/signup
+            } else {
+                alert("Something went wrong.")
+            }
+        })
+    }
 
 
     return (
@@ -101,22 +99,13 @@ export const AccountView = ({ user, setUser }) => {
                                 placeholder={user.Username}
                             />
                         </Form.Group>
-                        <Form.Group controlId="formPassword">
-                            <Form.Label>Password:</Form.Label>
-                            <Form.Control
-                                type="password"
-                                value={password}
-                                onChange={(e) => setPassword(e.target.value)}
-                                placeholder="*******"
-                            />
-                        </Form.Group>
                         <Form.Group>
                             <Form.Label>Email:</Form.Label>
                             <Form.Control
-                            type="email"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                            placeholder={user.Email}
+                                type="email"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                                placeholder={user.Email}
                             />
                         </Form.Group>
                         <Form.Group controlId="formBirthday">

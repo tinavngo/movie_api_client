@@ -3,16 +3,23 @@ import { useNavigate } from "react-router-dom";
 import { Col, Row, Container } from "react-bootstrap";
 import { Button, Card, Form } from "react-bootstrap";
 
-export const AccountView = ({ user, token, setUser }) => {
+export const AccountView = ({ user, setUser }) => {
+
     const [username, setUsername] = useState(user.Username);
     const [password, setPassword] = useState(user.Password);
     const [email, setEmail] = useState(user.Email);
     const [birthday, setBirthday] = useState(user.Birthday);
 
+    // Navigate
     const nav = useNavigate();
+
+    // Token
+    const token = localStorage.getItem('token');
 
     const handleUpdate = (event) => {
         event.preventDefault();
+
+        const user = JSON.parse(localStorage.getItem("user"));
 
         const data = {
             Username: username,
@@ -20,7 +27,7 @@ export const AccountView = ({ user, token, setUser }) => {
             Email: email,
             Birthday: birthday
         };
-
+        
         //UPDATE user data
         fetch(`https://tinflicks-2bf7ff98613b.herokuapp.com/users/${user.Username}`, {
             method: "PUT",
@@ -29,16 +36,19 @@ export const AccountView = ({ user, token, setUser }) => {
                 "Content-Type": "application/json",
                 Authorization: `Bearer ${token}`
             }
-        })
-            .then(async (response) => {
-                if (response.ok) {
-                    response.json();
-                    alert("Update was successful");
-                    window.location.reload();
-                } else {
-                    alert("Update failed")
-                }
-            });
+        }).then(async (response) => {
+            console.log(response)
+            if (response.ok) {
+                const updatedUser = await response.json();
+                localStorage.setItem('user', JSON.stringify(updatedUser));
+                setUser(updatedUser);
+                alert("Update was successful");
+            } else {
+                alert("Update failed")
+            }
+        }).catch(error => {
+            console.error('Error: ', error);
+        });
     };
 
 
@@ -65,15 +75,15 @@ export const AccountView = ({ user, token, setUser }) => {
     return (
         <Container className="my-5">
             <h2>Profile</h2>
-            <br/>
+            <br />
             <Row>
                 <Col md={6} sm={2}>
                     <Card>
                         <Card.Body>
                             <Card.Title>{user.Username}</Card.Title>
-                            <br/>
+                            <br />
                             <Card.Img variant="top" src="https://i.redd.it/8khu7i1cwtrb1.jpg" className="w-50 rounded" />
-                            <hr/>
+                            <hr />
                             <Card.Text>Email: {user.Email}</Card.Text>
                             <Card.Text>Birthday: {user.Birthday}</Card.Text>
                         </Card.Body>
@@ -118,11 +128,11 @@ export const AccountView = ({ user, token, setUser }) => {
                                 placeholder={user.Birthday}
                             />
                         </Form.Group>
-                        <br/>
+                        <br />
                         <Button type="submit" onClick={handleUpdate} className="mt-3 bottom-0">Update</Button>
-                        <br/>
-                        <br/>
-                        <hr/>
+                        <br />
+                        <br />
+                        <hr />
                         <Button onClick={handleDelete} className="btn-delete mt-3 bg-danger border-danger text-white" size="sm" >Delete Account</Button>
                     </Form>
                 </Col>

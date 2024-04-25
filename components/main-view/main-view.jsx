@@ -196,7 +196,7 @@ const removeFavorite = (id) => {
                           movie={movie}
                           removeFavorite={removeFavorite}
                           addFavorite={addFavorite}
-                          isFavorite={user.FavoriteMovies.includes(movie._id)} />
+                          isFavorite = {user.FavoriteMovies && user.FavoriteMovies.includes(movie._id)} />
                         </Col>
                       ))}
                     </>

@@ -11,7 +11,7 @@ export const AccountView = ({ user, token, handleUpdate }) => {
     const [birthday, setBirthday] = useState(user.Birthday);*/
 
     const [username, setUsername] = useState(user ? user.Username : "");
-    const [email, setEmail] = useState(user ? user.Email: "");
+    const [email, setEmail] = useState(user ? user.Email : "");
     const [birthday, setBirthday] = useState(user ? user.Birthday : "");
 
     // Navigate
@@ -28,7 +28,7 @@ export const AccountView = ({ user, token, handleUpdate }) => {
             Email: email,
             Birthday: birthday
         };
-        
+
         //UPDATE user data
         fetch(`https://tinflicks-2bf7ff98613b.herokuapp.com/users/${user.Username}`, {
             method: "PUT",
@@ -38,23 +38,24 @@ export const AccountView = ({ user, token, handleUpdate }) => {
                 Authorization: `Bearer ${token}`
             }
         })
-        .then((response) => {
-            if (response.ok) {
-                return response.json();
-            } else {
-                alert("Something went wrong");
-                return false;
-            }
-        }).then((user) => {
-            if (user) {
-                alert("Updated information successfully");
-                handleUpdate(user);
-        }
-    })
-    .catch((e) => {
-        alert(e);
-    });
-}
+            .then((response) => {
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    alert("Something went wrong");
+                    return false;
+                }
+            })
+            .then((user) => {
+                if (user) {
+                    alert("Updated information successfully");
+                    handleUpdate(user);
+                }
+            })
+            .catch((e) => {
+                alert(e);
+            });
+    }
 
 
     //DELETE user account
@@ -66,18 +67,18 @@ export const AccountView = ({ user, token, handleUpdate }) => {
                 Authorization: `Bearer ${token}`
             }
         })
-        .then((response) => {
-            if (response.ok) {
-                alert("User has been deleted");
-                localStorage.clear();
-                nav('/'); //Back to login/signup
-            } else {
-                alert("Something went wrong.")
-            }
-        })
-        .catch((e) => {
-            alert(e);
-        });
+            .then((response) => {
+                if (response.ok) {
+                    alert("User has been deleted");
+                    localStorage.clear();
+                    nav('/'); //Back to login/signup
+                } else {
+                    alert("Something went wrong.")
+                }
+            })
+            .catch((e) => {
+                alert(e);
+            });
     }
 
 
@@ -133,9 +134,10 @@ export const AccountView = ({ user, token, handleUpdate }) => {
                         <br />
                         <br />
                         <hr />
-                        <Button onClick={() => { if (confirm("Are you sure you want to permanently delete your account?")){
-                            handleDelete();
-                        }
+                        <Button onClick={() => {
+                            if (confirm("Are you sure you want to permanently delete your account?")) {
+                                handleDelete();
+                            }
                         }} className="btn-delete mt-3 bg-danger border-danger text-white" size="sm" >Delete Account</Button>
                     </Form>
                 </Col>

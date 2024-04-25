@@ -2,7 +2,7 @@ import { MovieCard } from "../movie-card/movie-card";
 import { Row, Col, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-export const FavoritesView = ({ removeFavorite, addFavorite, isFavorite, movies, user }) => {
+export const FavoritesView = ({ removeFavorite, addFavorite, movies, user }) => {
     const favMovieList = movies.filter(m => user.FavoriteMovies.includes(m._id));
     
     return (
@@ -15,10 +15,10 @@ export const FavoritesView = ({ removeFavorite, addFavorite, isFavorite, movies,
                 favMovieList?.map((movie) => (
                     <Col sm={7} md={5} lg={3} xl={3} className="mx-5 mt-5 mb-5 col-6 similar-movies-img" key={movie._id}>
                         <MovieCard
-                        movie={movie}
-                        removeFavorite={removeFavorite}
-                        addFavorite={addFavorite}
-                        isFavorite={user.FavoriteMovies.includes(movie._id)}
+                            movie={movie}
+                            removeFavorite={removeFavorite}
+                            addFavorite={addFavorite}
+                            isFavorite={user.FavoriteMovies && user.FavoriteMovies.includes(movie._id)}
                         />
                     </Col>
                 ))

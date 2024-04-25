@@ -1,21 +1,24 @@
-import { useState } from "react"
+import { useState } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Col, Row, Container } from "react-bootstrap";
 import { Button, Card, Form } from "react-bootstrap";
 
-export const AccountView = ({ user, setUser }) => {
+export const AccountView = ({ user, token, handleUpdate }) => {
 
-    const [username, setUsername] = useState(user.Username);
+    /*const [username, setUsername] = useState(user.Username);
     const [email, setEmail] = useState(user.Email);
-    const [birthday, setBirthday] = useState(user.Birthday);
+    const [birthday, setBirthday] = useState(user.Birthday);*/
+
+    const [username, setUsername] = useState(user ? user.Username : "");
+    const [email, setEmail] = useState(user ? user.Email: "");
+    const [birthday, setBirthday] = useState(user ? user.Birthday : "");
 
     // Navigate
     const nav = useNavigate();
 
-    // Token
-    const token = localStorage.getItem('token');
-
-    const handleUpdate = (event) => {
+    // Update User information
+    const handleSubmit = (event) => {
         event.preventDefault();
 
         const user = JSON.parse(localStorage.getItem("user"));
@@ -34,20 +37,24 @@ export const AccountView = ({ user, setUser }) => {
                 "Content-Type": "application/json",
                 Authorization: `Bearer ${token}`
             }
-        }).then(async (response) => {
-            console.log(response)
+        })
+        .then((response) => {
             if (response.ok) {
-                const updatedUser = await response.json();
-                localStorage.setItem('user', JSON.stringify(updatedUser));
-                setUser(updatedUser);
-                alert("Update was successful");
+                return response.json();
             } else {
-                alert("Update failed")
+                alert("Something went wrong");
+                return false;
             }
-        }).catch(error => {
-            console.error('Error: ', error);
-        });
-    };
+        }).then((user) => {
+            if (user) {
+                alert("Updated information successfully");
+                handleUpdate(user);
+        }
+    })
+    .catch((e) => {
+        alert(e);
+    });
+}
 
 
     //DELETE user account
@@ -58,15 +65,19 @@ export const AccountView = ({ user, setUser }) => {
                 "Content-Type": "application/json",
                 Authorization: `Bearer ${token}`
             }
-        }).then((response) => {
+        })
+        .then((response) => {
             if (response.ok) {
-                alert("User has been deleted")
+                alert("User has been deleted");
                 localStorage.clear();
                 nav('/'); //Back to login/signup
             } else {
                 alert("Something went wrong.")
             }
         })
+        .catch((e) => {
+            alert(e);
+        });
     }
 
 
@@ -88,7 +99,7 @@ export const AccountView = ({ user, setUser }) => {
                     </Card>
                 </Col>
                 <Col md={5} sm={2}>
-                    <Form onSubmit={handleUpdate}>
+                    <Form onSubmit={handleSubmit}>
                         <Form.Group controlId="formUsername">
                             <Form.Label>Username:</Form.Label>
                             <Form.Control
@@ -118,11 +129,14 @@ export const AccountView = ({ user, setUser }) => {
                             />
                         </Form.Group>
                         <br />
-                        <Button type="submit" onClick={handleUpdate} className="mt-3 bottom-0">Update</Button>
+                        <Button type="submit" className="mt-3 bottom-0">Update Account</Button>
                         <br />
                         <br />
                         <hr />
-                        <Button onClick={handleDelete} className="btn-delete mt-3 bg-danger border-danger text-white" size="sm" >Delete Account</Button>
+                        <Button onClick={() => { if (confirm("Are you sure you want to permanently delete your account?")){
+                            handleDelete();
+                        }
+                        }} className="btn-delete mt-3 bg-danger border-danger text-white" size="sm" >Delete Account</Button>
                     </Form>
                 </Col>
             </Row>

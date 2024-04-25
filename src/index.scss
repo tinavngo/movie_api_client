@@ -1,5 +1,11 @@
+@import '~bootstrap/scss/bootstrap.scss';
+
 // Overwrite theme variables
 $primary: darkorange;
-$body-bg: rgba(169, 169, 169, 0.167);
+$body-bg: rgb(255, 255, 255);
 
-@import '~bootstrap/scss/bootstrap.scss';
+
+.dropdown-menu {
+    background-color: fuchsia;
+}
+

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { AccountView } from "../account-view/account-view";
 import { FavoritesView } from "../favorites-view/favorites-view";
 import { MovieCard } from "../movie-card/movie-card";
@@ -6,16 +6,24 @@ import { MovieView } from "../movie-view/movie-view";
 import { LoginView } from "../login-view/login-view";
 import { SignupView } from "../signup-view/signup-view";
 import { NavigationBar } from "../navigation-bar/navigation-bar";
+import { FavoritesView } from "../favorites-view/favorites-view";
+
 import { Row, Col } from "react-bootstrap";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import { FavoritesView } from "../favorites-view/favorites-view";
 
 export const MainView = () => {
   const storedUser = JSON.parse(localStorage.getItem("user"));
   const storedToken = localStorage.getItem("token");
+
   const [movies, setMovies] = useState([]);
   const [user, setUser] = useState(storedUser ? storedUser : null);
   const [token, setToken] = useState(storedToken ? storedToken : null);
+
+  // Handles updates for user information
+  const handleUpdate = (user) => {
+    setUser(user);
+    localStorage.setItem("user", JSON.stringify(user));
+  };
 
   useEffect(() => {
     if (!token) {
@@ -107,8 +115,8 @@ const removeFavorite = (id) => {
         user={user}
         onLoggedOut={() => {
           setUser(null);
-          localStorage.removeItem('token');
-          localStorage.removeItem('user');
+          setToken(null);
+          localStorage.clear();
         }}
       />
       <br />
@@ -228,7 +236,13 @@ const removeFavorite = (id) => {
                       <AccountView
                         user={user}
                         movies={movies}
-                        setUser={setUser}
+                        token={token}
+                        handleUpdate={handleUpdate}
+                        onLoggedOut={() => {
+                          setUser(null);
+                          setToken(null);
+                          localStorage.clear();
+                        }}
                       />
                     </Col>
                   )}

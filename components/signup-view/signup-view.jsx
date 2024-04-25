@@ -18,7 +18,7 @@ export const SignupView = () => {
             Birthday: birthday
         };
 
-        fetch("https://tinflicks-2bf7ff98613b.herokuapp.com/users", {
+        fetch("https://tinflicks-2bf7ff98613b.herokuapp.com/users/", {
             method: "POST",
             body: JSON.stringify(data),
             headers: {
@@ -46,7 +46,7 @@ export const SignupView = () => {
                                     <br />
                                     <h1>Create an account</h1>
                                     <br />
-                                    <Form.Group control Id="formusername">
+                                    <Form.Group control id="formusername">
                                         <Form.Label>Username:</Form.Label>
                                         <Form.Control
                                             type="text"

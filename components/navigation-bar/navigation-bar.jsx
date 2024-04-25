@@ -1,6 +1,7 @@
-import { Navbar, Container, Nav, NavDropdown, Form, Button } from "react-bootstrap";
+import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap";
 import React from "react";
 import { Link } from "react-router-dom";
+import '../../src/index.scss';
 
 export const NavigationBar = ({ user, onLoggedOut }) => {
     return (
@@ -11,7 +12,7 @@ export const NavigationBar = ({ user, onLoggedOut }) => {
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="me-auto">
+                    <Nav>
                         {!user && (
                             <>
                                 <Nav.Link as={Link} to="/login">

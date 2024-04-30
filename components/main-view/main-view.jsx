@@ -239,11 +239,7 @@ const removeFavorite = (id) => {
                         movies={movies}
                         token={token}
                         handleUpdate={handleUpdate}
-                        onLoggedOut={() => {
-                          setUser(null);
-                          setToken(null);
-                          localStorage.clear();
-                        }}
+                        setUser={setUser}
                       />
                     </Col>
                   )}

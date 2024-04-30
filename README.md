@@ -15,7 +15,7 @@ CinematFlicks application allows users to create an account to view author's per
 - React for UI (Icons & Components)
 - PropTypes for prop validation
 
-## Functiontionality
+## Functionality
 
 - User Authentication
 - Account - Create, Read, Update, Delete 

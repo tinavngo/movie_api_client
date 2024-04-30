@@ -132,7 +132,8 @@ const removeFavorite = (id) => {
                     <Navigate to="/" />
                   ) : (
                     <Col md={5}>
-                      <LoginView on onLoggedIn={(user, token) => {
+                      <LoginView 
+                        onLoggedIn={(user, token) => {
                         setUser(user);
                         setToken(token);
                       }}

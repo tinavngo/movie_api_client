@@ -47765,7 +47765,8 @@ const AccountView = ({ user, token, handleUpdate })=>{
         }).then((response)=>{
             if (response.ok) {
                 alert("User has been deleted");
-                localStorage.clear();
+                onLoggedOut();
+                window.location.replace("/login");
                 nav("/"); //Back to login/signup
             } else alert("Something went wrong.");
         }).catch((e)=>{
@@ -47779,12 +47780,12 @@ const AccountView = ({ user, token, handleUpdate })=>{
                 children: "Profile"
             }, void 0, false, {
                 fileName: "components/account-view/account-view.jsx",
-                lineNumber: 87,
+                lineNumber: 88,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
                 fileName: "components/account-view/account-view.jsx",
-                lineNumber: 88,
+                lineNumber: 89,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
@@ -47799,12 +47800,12 @@ const AccountView = ({ user, token, handleUpdate })=>{
                                         children: user.Username
                                     }, void 0, false, {
                                         fileName: "components/account-view/account-view.jsx",
-                                        lineNumber: 93,
+                                        lineNumber: 94,
                                         columnNumber: 29
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
                                         fileName: "components/account-view/account-view.jsx",
-                                        lineNumber: 94,
+                                        lineNumber: 95,
                                         columnNumber: 29
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Img, {
@@ -47813,12 +47814,12 @@ const AccountView = ({ user, token, handleUpdate })=>{
                                         className: "w-50 rounded"
                                     }, void 0, false, {
                                         fileName: "components/account-view/account-view.jsx",
-                                        lineNumber: 95,
+                                        lineNumber: 96,
                                         columnNumber: 29
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("hr", {}, void 0, false, {
                                         fileName: "components/account-view/account-view.jsx",
-                                        lineNumber: 96,
+                                        lineNumber: 97,
                                         columnNumber: 29
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Text, {
@@ -47828,7 +47829,7 @@ const AccountView = ({ user, token, handleUpdate })=>{
                                         ]
                                     }, void 0, true, {
                                         fileName: "components/account-view/account-view.jsx",
-                                        lineNumber: 97,
+                                        lineNumber: 98,
                                         columnNumber: 29
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Text, {
@@ -47838,23 +47839,23 @@ const AccountView = ({ user, token, handleUpdate })=>{
                                         ]
                                     }, void 0, true, {
                                         fileName: "components/account-view/account-view.jsx",
-                                        lineNumber: 98,
+                                        lineNumber: 99,
                                         columnNumber: 29
                                     }, undefined)
                                 ]
                             }, void 0, true, {
                                 fileName: "components/account-view/account-view.jsx",
-                                lineNumber: 92,
+                                lineNumber: 93,
                                 columnNumber: 25
                             }, undefined)
                         }, void 0, false, {
                             fileName: "components/account-view/account-view.jsx",
-                            lineNumber: 91,
+                            lineNumber: 92,
                             columnNumber: 21
                         }, undefined)
                     }, void 0, false, {
                         fileName: "components/account-view/account-view.jsx",
-                        lineNumber: 90,
+                        lineNumber: 91,
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
@@ -47870,7 +47871,7 @@ const AccountView = ({ user, token, handleUpdate })=>{
                                             children: "Username:"
                                         }, void 0, false, {
                                             fileName: "components/account-view/account-view.jsx",
-                                            lineNumber: 105,
+                                            lineNumber: 106,
                                             columnNumber: 29
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Control, {
@@ -47881,13 +47882,13 @@ const AccountView = ({ user, token, handleUpdate })=>{
                                             placeholder: user.Username
                                         }, void 0, false, {
                                             fileName: "components/account-view/account-view.jsx",
-                                            lineNumber: 106,
+                                            lineNumber: 107,
                                             columnNumber: 29
                                         }, undefined)
                                     ]
                                 }, void 0, true, {
                                     fileName: "components/account-view/account-view.jsx",
-                                    lineNumber: 104,
+                                    lineNumber: 105,
                                     columnNumber: 25
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Group, {
@@ -47896,7 +47897,7 @@ const AccountView = ({ user, token, handleUpdate })=>{
                                             children: "Email:"
                                         }, void 0, false, {
                                             fileName: "components/account-view/account-view.jsx",
-                                            lineNumber: 115,
+                                            lineNumber: 116,
                                             columnNumber: 29
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Control, {
@@ -47906,13 +47907,13 @@ const AccountView = ({ user, token, handleUpdate })=>{
                                             placeholder: user.Email
                                         }, void 0, false, {
                                             fileName: "components/account-view/account-view.jsx",
-                                            lineNumber: 116,
+                                            lineNumber: 117,
                                             columnNumber: 29
                                         }, undefined)
                                     ]
                                 }, void 0, true, {
                                     fileName: "components/account-view/account-view.jsx",
-                                    lineNumber: 114,
+                                    lineNumber: 115,
                                     columnNumber: 25
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Group, {
@@ -47922,7 +47923,7 @@ const AccountView = ({ user, token, handleUpdate })=>{
                                             children: "Birthday:"
                                         }, void 0, false, {
                                             fileName: "components/account-view/account-view.jsx",
-                                            lineNumber: 124,
+                                            lineNumber: 125,
                                             columnNumber: 29
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Control, {
@@ -47932,18 +47933,18 @@ const AccountView = ({ user, token, handleUpdate })=>{
                                             placeholder: user.Birthday
                                         }, void 0, false, {
                                             fileName: "components/account-view/account-view.jsx",
-                                            lineNumber: 125,
+                                            lineNumber: 126,
                                             columnNumber: 29
                                         }, undefined)
                                     ]
                                 }, void 0, true, {
                                     fileName: "components/account-view/account-view.jsx",
-                                    lineNumber: 123,
+                                    lineNumber: 124,
                                     columnNumber: 25
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
                                     fileName: "components/account-view/account-view.jsx",
-                                    lineNumber: 132,
+                                    lineNumber: 133,
                                     columnNumber: 25
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
@@ -47951,11 +47952,6 @@ const AccountView = ({ user, token, handleUpdate })=>{
                                     className: "mt-3 bottom-0",
                                     children: "Update Account"
                                 }, void 0, false, {
-                                    fileName: "components/account-view/account-view.jsx",
-                                    lineNumber: 133,
-                                    columnNumber: 25
-                                }, undefined),
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
                                     fileName: "components/account-view/account-view.jsx",
                                     lineNumber: 134,
                                     columnNumber: 25
@@ -47965,9 +47961,14 @@ const AccountView = ({ user, token, handleUpdate })=>{
                                     lineNumber: 135,
                                     columnNumber: 25
                                 }, undefined),
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("hr", {}, void 0, false, {
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
                                     fileName: "components/account-view/account-view.jsx",
                                     lineNumber: 136,
+                                    columnNumber: 25
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("hr", {}, void 0, false, {
+                                    fileName: "components/account-view/account-view.jsx",
+                                    lineNumber: 137,
                                     columnNumber: 25
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
@@ -47979,30 +47980,30 @@ const AccountView = ({ user, token, handleUpdate })=>{
                                     children: "Delete Account"
                                 }, void 0, false, {
                                     fileName: "components/account-view/account-view.jsx",
-                                    lineNumber: 137,
+                                    lineNumber: 138,
                                     columnNumber: 25
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "components/account-view/account-view.jsx",
-                            lineNumber: 103,
+                            lineNumber: 104,
                             columnNumber: 21
                         }, undefined)
                     }, void 0, false, {
                         fileName: "components/account-view/account-view.jsx",
-                        lineNumber: 102,
+                        lineNumber: 103,
                         columnNumber: 17
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "components/account-view/account-view.jsx",
-                lineNumber: 89,
+                lineNumber: 90,
                 columnNumber: 13
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "components/account-view/account-view.jsx",
-        lineNumber: 86,
+        lineNumber: 87,
         columnNumber: 9
     }, undefined);
 };

@@ -1,5 +1,6 @@
 import { React, useState } from "react";
 import { Button, Form, Container, Row, Col, CardGroup, Card } from "react-bootstrap";
+import { useNavigate } from "react-router";
 
 
 export const SignupView = () => {
@@ -7,6 +8,9 @@ export const SignupView = () => {
     const [password, setPassword] = useState("");
     const [email, setEmail] = useState("");
     const [birthday, setBirthday] = useState("");
+
+    // Navigate
+    const nav = useNavigate();
 
     const handleSubmit = (event) => {
         event.preventDefault();  //This prevents the default behavior of the form which is to reload the entire page
@@ -28,7 +32,7 @@ export const SignupView = () => {
             .then((response) => {
                 if (response.ok) {
                     alert("Signup successful");
-                    window.location.reload();
+                    nav('/'); // Back to Login
                 } else {
                     alert("Signup failed");
                 }

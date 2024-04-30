@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { Col, Row, Container } from "react-bootstrap";
 import { Button, Card, Form } from "react-bootstrap";
 
-export const AccountView = ({ user, token, handleUpdate }) => {
+export const AccountView = ({ user, token, handleUpdate, onLoggedOut }) => {
 
     /*const [username, setUsername] = useState(user.Username);
     const [email, setEmail] = useState(user.Email);
@@ -70,7 +70,8 @@ export const AccountView = ({ user, token, handleUpdate }) => {
             .then((response) => {
                 if (response.ok) {
                     alert("User has been deleted");
-                    localStorage.clear();
+                    onLoggedOut();
+                    window.location.replace('/login');
                     nav('/'); //Back to login/signup
                 } else {
                     alert("Something went wrong.")
